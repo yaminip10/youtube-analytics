@@ -73,7 +73,34 @@ from
     YOUTUBE_VIDEO_COMMENTS;
 
 
+select * from YOUTUBE_VIDEO_COMMENTS left join YOUTUBE_VIDEO_STATS 
+on 
+YOUTUBE_VIDEO_COMMENTS.VIDEO_ID = YOUTUBE_VIDEO_STATS.VIDEOID
+----------------------------------
+select DISTINCT YOUTUBE_VIDEO_COMMENTS.VIDEO_ID
+from YOUTUBE_VIDEO_COMMENTS left join YOUTUBE_VIDEO_STATS 
+on 
+YOUTUBE_VIDEO_COMMENTS.VIDEO_ID = YOUTUBE_VIDEO_STATS.VIDEOID
 
+---------------------------------------------------------
+SELECT COUNT(DISTINCT YOUTUBE_VIDEO_COMMENTS.VIDEO_ID) AS distinct_count
+FROM YOUTUBE_VIDEO_COMMENTS
+LEFT JOIN YOUTUBE_VIDEO_STATS 
+ON YOUTUBE_VIDEO_COMMENTS.VIDEO_ID = YOUTUBE_VIDEO_STATS.VIDEOID;
 
+select count(distinct YOUTUBE_VIDEO_COMMENTS.VIDEO_ID)as distinct_count
+from youtube_video_comments
+right join youtube_video_stats
+on youtube_video_comments.video_id = youtube_video_stats.videoid
+------------------------------
+select * from YOUTUBE_CHANNEL_STATS left join YOUTUBE_VIDEO_STATS 
+on 
+YOUTUBE_CHANNEL_STATS.VIDEOID = YOUTUBE_VIDEO_STATS.VIDEOID
+----------------------------------------------------
+select DISTINCT YOUTUBE_CHANNEL_STATS.VIDEOID
+from YOUTUBE_CHANNEL_STATS
+left join YOUTUBE_VIDEO_STATS 
+on 
+YOUTUBE_CHANNEL_STATS.VIDEOID = YOUTUBE_VIDEO_STATS.VIDEOID
 
-
+select count(videoid) from YOUTUBE_CHANNEL_STATS
