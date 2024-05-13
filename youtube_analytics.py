@@ -6,7 +6,7 @@ def connect_to_snowflake():
     try:
         snowflake_account = "du18788.ap-southeast-1"
         snowflake_user = "YAMINIPATIL"
-        snowflake_password = "Yamini@10"
+        snowflake_password = "xxxxxxxxxxxxxx"
         snowflake_database = "YoutubeAnalytics"
         snowflake_schema = "PUBLIC"
         
@@ -76,7 +76,7 @@ def process_data(conn, data):
 # Main function to execute the process
 def process_youtube_channel_stats():
     api_url = "https://www.googleapis.com/youtube/v3/search"
-    api_key = "AIzaSyCbdDN_qsxGKQNwuGc9gJ0-aMNqzzsuTDA"
+    api_key = "XXXXXXXXXXXXXXXX"
     channel_id = "UCbr9s1iYnD4SRszBxzEPELg"
     conn = connect_to_snowflake()
     if conn:
@@ -167,7 +167,7 @@ def insert_statistics(cursor, video_id, statistics):
         print("Error inserting statistics into Snowflake:", e)
 
 def process_youtube_video_stats():
-    api_key = "AIzaSyCbdDN_qsxGKQNwuGc9gJ0-aMNqzzsuTDA"
+    api_key = "XXXXXXXXXXXXXXXX"
     channel_id = "UCbr9s1iYnD4SRszBxzEPELg"
 
     conn = connect_to_snowflake()
@@ -267,7 +267,7 @@ def store_in_snowflake(video_id, comment_text, conn):
 
 # # Main function to process YouTube comments stats
 def process_youtube_comments_stats():
-    api_key = "AIzaSyCbdDN_qsxGKQNwuGc9gJ0-aMNqzzsuTDA"
+    api_key = "XXXXXXXXXXXXXXXX"
     channel_id = "UCbr9s1iYnD4SRszBxzEPELg"
     
     # Connect to Snowflake
